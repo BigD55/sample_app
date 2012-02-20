@@ -1,4 +1,6 @@
 SampleApp::Application.routes.draw do
+  get "blogs/new"
+
   get "sessions/new"
 
   resources :users do
