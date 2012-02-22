@@ -26,6 +26,9 @@ class User < ActiveRecord::Base
                                    :class_name => "Relationship",
                                    :dependent => :destroy
   has_many :followers, :through => :reverse_relationships, :source => :follower
+
+  has_many :blogs, :dependent => :destroy
+
   validates :name, :presence => true
   validates :name, :presence => true,
                      :length => { :maximum => 50 }

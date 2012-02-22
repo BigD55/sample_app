@@ -198,3 +198,23 @@ form.new_micropost textarea {
 height: 4em;
 margin-bottom: 0;
 }
+
+form.new_blog {
+margin-bottom: 2em;
+}
+form.new_blog textarea {
+height: 4em;
+margin-bottom: 0;
+}
+form.new_blog {
+margin-bottom: 2em;
+}
+form.new_blog #blog_title {
+width: 30em;
+margin-bottom: 0;
+}
+table.blog tr td.blog span.timestamp {
+display: block;
+font-size: 85%;
+color: #666;
+}

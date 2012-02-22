@@ -168,6 +168,22 @@ describe User do
             end
          end
      end
+     describe "Blog Zuordnungen" do
+         before(:each) do
+            @user = User.create(@attr)
+            @bl1 = Factory(:blog, :title => Factory.next(:title), :user => @user, :created_at => 1.day.ago)
+            @bl2 = Factory(:blog, :title => Factory.next(:title), :user => @user, :created_at => 1.hour.ago)
+         end         
+         it "sollte Blog Attribute haben" do
+            @user.should respond_to(:blogs)
+         end
+         it "sollte zugeordnete blogs zerstoeren" do
+           @user.destroy
+           [@bl1, @bl2].each do |blog|
+              Blog.find_by_id(blog.id).should be_nil
+           end
+         end 
+     end
      describe "relationships" do
        before(:each) do
          @user = User.create!(@attr)

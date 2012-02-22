@@ -1,2 +1,20 @@
-<h1>Blogs#new</h1>
-<p>Find me in app/views/blogs/new.html.erb</p>
+<h1>Create New Blog</h1>
+  <% if signed_in? %>
+   <table class="front" summary="For signed-in users">
+     <tr>
+       <td class="main">
+           <%= render 'shared/newblog_form' %>
+       </td>
+       <td class="sidebar round">
+           <%= render 'shared/user_info' %>
+           <%= render 'shared/stats' %>
+       </td>
+    </tr>
+   </table>
+  <% else %>
+   <p>
+     This is my experimental Social-Multimedia-Site, you can create blogs,
+     share micromessages, and comment....  
+   </p>
+   <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+<% end %>

@@ -15,3 +15,14 @@
      micropost.content "Foo bar"
      micropost.association :user
   end
+  Factory.define :blog do |blog|
+     blog.title "irgendein bloeder Titel"
+     blog.description "und das hier sollte den Titel noch was erlaeutern"
+     blog.association :user
+  end
+  Factory.sequence :title do |n|
+     "Beispiel-Titel-#{n}-Blabla"
+  end
+
+  
+
