@@ -174,7 +174,7 @@ describe User do
             @bl1 = Factory(:blog, :title => Factory.next(:title), :user => @user, :created_at => 1.day.ago)
             @bl2 = Factory(:blog, :title => Factory.next(:title), :user => @user, :created_at => 1.hour.ago)
          end         
-         it "sollte Blog Attribute haben" do
+         it "sollte Blogs Attribute haben" do
             @user.should respond_to(:blogs)
          end
          it "sollte zugeordnete blogs zerstoeren" do

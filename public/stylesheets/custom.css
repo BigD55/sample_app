@@ -198,7 +198,7 @@ form.new_micropost textarea {
 height: 4em;
 margin-bottom: 0;
 }
-
+/* new blog form */
 form.new_blog {
 margin-bottom: 2em;
 }
@@ -213,8 +213,22 @@ form.new_blog #blog_title {
 width: 30em;
 margin-bottom: 0;
 }
+/* show blog */
 table.blog tr td.blog span.timestamp {
 display: block;
 font-size: 85%;
 color: #666;
 }
+/* blogs index page */
+ul.blogs {
+margin-top: 1em;
+}
+.blogs li {
+list-style: none;
+}
+.blogs span.timestamp {
+display: block;
+font-size: 85%;
+color: #666;
+}
+

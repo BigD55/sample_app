@@ -1,4 +1,7 @@
 class BlogsController < ApplicationController
+  before_filter :authenticate, :only => [:index ]
+
+
   def show 
     @blog = Blog.find(params[:id])
   end 

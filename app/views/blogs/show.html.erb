@@ -6,7 +6,7 @@
          <span class="timestamp">
             Created <%= time_ago_in_words(@blog.created_at) %> ago
             by 
-            <%= link_to gravatar_for(@blog.user), @blog.user %>
+            <%= link_to gravatar_for(@blog.user, :size => 20), @blog.user %>
             <%= link_to @blog.user.name, @blog.user %>
          </span>
       </td>
