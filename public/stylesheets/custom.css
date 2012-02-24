@@ -224,6 +224,7 @@ ul.blogs {
 margin-top: 1em;
 }
 .blogs li {
+border-top: 1px solid #ccc;
 list-style: none;
 }
 .blogs span.timestamp {
@@ -231,4 +232,18 @@ display: block;
 font-size: 85%;
 color: #666;
 }
-
+/* Edit Blog */
+form.edit_blog {
+margin-bottom: 2em;
+}
+form.edit_blog textarea {
+height: 4em;
+margin-bottom: 0;
+}
+form.edit_blog {
+margin-bottom: 2em;
+}
+form.edit_blog #blog_title {
+width: 30em;
+margin-bottom: 0;
+}
