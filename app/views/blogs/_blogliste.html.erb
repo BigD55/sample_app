@@ -10,7 +10,7 @@
    <% @blogs.each do |blog| %>
        <tr>
          <td class="main">
-           <%= link_to blog.title, blog %><br> 
+           <b><%= link_to blog.title, blog %></b><br> 
            <%= blog.description %><br> 
            <span class="timestamp">
               Created <%= time_ago_in_words(blog.created_at) %> ago by 
