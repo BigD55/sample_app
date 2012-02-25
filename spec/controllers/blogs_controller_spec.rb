@@ -127,7 +127,7 @@ describe BlogsController do
        it "should have an element for each blog" do
           get :index
           @blogs[10..13].each do |blog|
-             response.should have_selector("li", :content => blog.title)
+             response.should have_selector("tb", :content => blog.title)
           end
        end
        it "should paginate blogs" do

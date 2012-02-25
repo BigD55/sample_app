@@ -1,0 +1,31 @@
+ <table class="blogs" summary="info"> 
+       <tr>
+         <th>
+            <h1 class="blogindex">All Blogs</h1>
+         </th>
+         <th>
+            <%= link_to "create new blog", new_blog_path %>
+         </th>
+       </tr>
+   <% @blogs.each do |blog| %>
+       <tr>
+         <td class="main">
+           <%= link_to blog.title, blog %><br> 
+           <%= blog.description %><br> 
+           <span class="timestamp">
+              Created <%= time_ago_in_words(blog.created_at) %> ago by 
+              <%= link_to gravatar_for(blog.user, :size => 14), blog.user %>
+              <%= link_to blog.user.name, blog.user %>
+           </span>
+         </td>
+          <td>
+           <% if current_user?(blog.user) %>
+            <%= link_to "delete", blog, :method => :delete,
+                                        :confirm => "You sure?",
+                                        :title => blog.title %><br>
+            <%= link_to "edit", edit_blog_path(blog.id) %>        
+          <% end %>
+         </td>
+       </tr> 
+    <% end %>
+</table>

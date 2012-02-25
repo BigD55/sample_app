@@ -34,6 +34,11 @@ class BlogsController < ApplicationController
         render 'edit'
      end
   end
+  def destroy
+     Blog.find(params[:id]).destroy
+     flash[:success] = "Blog destroyed."
+     redirect_to blogs_path
+  end
   def index
      @title = "All Blogs"
      @blogs = Blog.paginate(:page => params[:page])

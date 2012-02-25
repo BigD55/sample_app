@@ -1,16 +1,14 @@
-<h1>All Blogs</h1>
-   <%= will_paginate %>
-     <ul class="blogs">
-       <% @blogs.each do |blog| %>
-          <li>
-            <%= link_to blog.title, blog %><br> 
-            <%= blog.description %><br> 
-             <span class="timestamp">
-               Created <%= time_ago_in_words(blog.created_at) %> ago by 
-               <%= link_to gravatar_for(blog.user, :size => 14), blog.user %>
-               <%= link_to blog.user.name, blog.user %>
-            </span>
-          </li>
-       <% end %>
-     </ul>
- <%= will_paginate %>
+<table class="blog">
+  <tr>
+    <td class="main"> 
+        <%= will_paginate %>
+        <%= render 'blogliste' %>
+      <%= will_paginate %>
+     </td>
+     
+     <td class="sidebar round" >
+           <%= render 'shared/user_info' %>
+           <%= render 'shared/stats' %>
+     </td>
+   </tr>
+</table>
