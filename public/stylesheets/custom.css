@@ -6,10 +6,12 @@ background: #cff;
 }
 header {
 padding-top: 20px;
+background: url("/images/header1.png") 
+repeat-x top left;
 }
 header img {
-padding: 1em;
-background: #fff;
+padding: 0.5em;
+background: transparent;
 }
 section {
 margin-top: 1em;
