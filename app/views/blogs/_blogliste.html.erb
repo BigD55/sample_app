@@ -1,15 +1,15 @@
  <table class="blogs" summary="info"> 
        <tr>
-         <th>
-            <h1 class="blogindex">All Blogs</h1>
+         <th class="blogs round">
+            <h1 class="blogs">All Blogs</h1>
          </th>
-         <th>
+         <th class="blogs round">
             <%= link_to "create new blog", new_blog_path %>
          </th>
        </tr>
    <% @blogs.each do |blog| %>
-       <tr>
-         <td class="main">
+       <tr class="<%= cycle('even','odd') %>">
+         <td class="blogs ">
            <b><%= link_to blog.title, blog %></b><br> 
            <%= blog.description %><br> 
            <span class="timestamp">
@@ -18,7 +18,7 @@
               <%= link_to blog.user.name, blog.user %>
            </span>
          </td>
-          <td>
+          <td class="blogs">
            <% if current_user?(blog.user) %>
             <%= link_to "delete", blog, :method => :delete,
                                         :confirm => "You sure?",

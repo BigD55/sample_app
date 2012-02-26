@@ -251,3 +251,6 @@ form.edit_blog #blog_title {
 width: 30em;
 margin-bottom: 0;
 }
+/* custom color cycling */
+.even { background: #eeeeee; }
+.odd { background: #ffffff; }
