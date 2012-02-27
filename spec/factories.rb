@@ -26,5 +26,10 @@
   Factory.sequence :description do |n|
      "Beispiel-Erklaerung-#{n}"
   end
-  
+  Factory.define :blogpost do |blogpost|
+     blogpost.title "noch irgendein bloeder Titel"
+     blogpost.content "und das hier sollte der lange Text sein"
+     blogpost.association :user
+     blogpost.association :blog
+  end    
 

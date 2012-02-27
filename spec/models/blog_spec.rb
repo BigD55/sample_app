@@ -84,4 +84,12 @@ describe Blog do
        @user.blogs.build(:description => "a" * 258).should_not be_valid
     end
   end
+  describe "blogposts associations" do
+    before(:each) do
+       @blog = Blog.create(@attr)
+    end
+    it "should have a blogposts attribute" do
+       @blog_should respond_to(:blogposts)
+    end        
+  end
 end

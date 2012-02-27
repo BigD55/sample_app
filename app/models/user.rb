@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
   has_many :followers, :through => :reverse_relationships, :source => :follower
 
   has_many :blogs, :dependent => :destroy
+  has_many :blogposts, :dependent => :destroy 
 
   validates :name, :presence => true
   validates :name, :presence => true,

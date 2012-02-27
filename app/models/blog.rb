@@ -13,7 +13,8 @@
 class Blog < ActiveRecord::Base
   attr_accessible :title, :description 
   belongs_to :user
-
+  has_many   :blogposts, :dependent => :destroy 
+  
   validates :title, :presence => true, :length => { :maximum => 80 }, 
                                        :uniqueness => { :case_sensitive => false }
   validates :description, :presence => true, :length => { :maximum => 140 }

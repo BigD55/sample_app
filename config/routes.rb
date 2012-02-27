@@ -1,14 +1,12 @@
 SampleApp::Application.routes.draw do
 
-  get "blogs/new"
-
-  get "sessions/new"
   resources :blogs
   resources :users do
     member do
       get :following, :followers
     end
   end 
+  resources :blogposts
   resources :sessions, :only => [:new, :create, :destroy]
   resources :microposts, :only => [:create, :destroy]
   resources :relationships, :only => [:create, :destroy]

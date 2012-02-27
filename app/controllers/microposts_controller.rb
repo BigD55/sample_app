@@ -13,7 +13,7 @@ class MicropostsController < ApplicationController
     end
     def destroy
         @micropost.destroy
-        redirect_back_or root_path
+        redirect_back_or @micropost.user
     end
     private
         def authorized_user
