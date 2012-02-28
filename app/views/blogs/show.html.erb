@@ -9,6 +9,12 @@
             <%= link_to gravatar_for(@blog.user, :size => 20), @blog.user %>
             <%= link_to @blog.user.name, @blog.user %>
          </span>
+          <% unless @blog.blogposts.empty? %>
+             <table class="blogposts" summary="Blog blogposts">
+               <%= render @blogposts %>
+             </table>
+            <%= will_paginate @blogposts %>
+          <% end %>
       </td>
       <% if signed_in? %>
         <td class="sidebar round">

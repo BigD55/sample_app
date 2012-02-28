@@ -4,6 +4,7 @@ class BlogsController < ApplicationController
 
   def show 
     @blog = Blog.find(params[:id])
+    @blogposts = @blog.blogposts.paginate(:page => params[:page])
     @title = @blog.title
   end 
   def new

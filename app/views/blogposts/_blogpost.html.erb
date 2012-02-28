@@ -1,0 +1,9 @@
+<tr>
+   <td class="blogpost">
+      <span class="title"><h3><%= blogpost.title %></h3></span>
+      <span class="content"><%= blogpost.content %></span>
+      <span class="timestamp">
+         Posted <%= time_ago_in_words(blogpost.created_at) %> ago.
+     </span>
+   </td>
+</tr>
