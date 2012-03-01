@@ -11,7 +11,7 @@
        <tr class="<%= cycle('even','odd') %>">
          <td class="blogs ">
            <b><%= link_to blog.title, blog %></b><br> 
-           <%= blog.description %><br> 
+           <%= blog.description.html_safe %><br> 
            <span class="timestamp">
               Created <%= time_ago_in_words(blog.created_at) %> ago by 
               <%= link_to gravatar_for(blog.user, :size => 14), blog.user %>

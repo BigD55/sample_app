@@ -177,6 +177,9 @@ describe User do
          it "sollte Blogs Attribute haben" do
             @user.should respond_to(:blogs)
          end
+         it "should have the right blogs in the right order" do
+            @user.blogs.should == [@bl2, @bl1]
+         end
          it "sollte zugeordnete blogs zerstoeren" do
            @user.destroy
            [@bl1, @bl2].each do |blog|
@@ -184,6 +187,27 @@ describe User do
            end
          end 
      end
+     describe "Blogpost Zuordnungen" do
+         before(:each) do
+            @user = User.create(@attr)
+            @blog = Factory( :blog, :title => "viel Text", 
+                                    :description => "noch viel mehr Text", :user => @user )
+            @bp1 = Factory(:blogpost, :title => Factory.next(:title), :blog => @blog, :user => @user, :created_at => 1.day.ago)
+            @bp2 = Factory(:blogpost, :title => Factory.next(:title), :blog => @blog, :user => @user, :created_at => 1.hour.ago)
+         end         
+         it "sollte Blogposts Attribute haben" do
+            @user.should respond_to(:blogposts)
+         end
+         it "should have the right blogposts in the right order" do
+            @user.blogposts.should == [@bp2, @bp1]
+         end
+         it "sollte zugeordnete blogposts zerstoeren" do
+           @user.destroy
+           [@bp1, @bp2].each do |blogpost|
+              Blogpost.find_by_id(blogpost.id).should be_nil
+           end
+         end 
+     end  
      describe "relationships" do
        before(:each) do
          @user = User.create!(@attr)

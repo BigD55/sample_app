@@ -4,7 +4,8 @@ class Blogpost < ActiveRecord::Base
  belongs_to :user 
  belongs_to :blog
  validates :title, :presence => true, :length => { :maximum => 100 }
- validates :content, :presence => true, :length => { :maximum => 180 }
+ validates :content, :presence => true, :length => { :maximum => 10000 }
  validates :user_id, :presence => true
  validates :blog_id, :presence => true
+ default_scope :order => "blogposts.created_at DESC"
 end

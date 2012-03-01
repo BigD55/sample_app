@@ -2,7 +2,7 @@
      <tr>
        <td class="blog">       
          <h1 class="blog"><%= @blog.title %></h1>
-         <p><%= @blog.description %></p>
+         <p><%= @blog.description.html_safe %></p>
          <span class="timestamp">
             Created <%= time_ago_in_words(@blog.created_at) %> ago
             by 
@@ -10,10 +10,10 @@
             <%= link_to @blog.user.name, @blog.user %>
          </span>
           <% unless @blog.blogposts.empty? %>
-             <table class="blogposts" summary="Blog blogposts">
-               <%= render @blogposts %>
-             </table>
-            <%= will_paginate @blogposts %>
+                  <table class="blogposts" summary="Blog blogposts">
+                         <%= render @blogposts %>
+                  </table>
+                  <%= will_paginate @blogposts %>
           <% end %>
       </td>
       <% if signed_in? %>

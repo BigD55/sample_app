@@ -66,6 +66,26 @@ describe Blog do
        @blog.user.should == @user
     end 
   end
+  describe "blogposts associations" do
+    before(:each) do
+       @blog = @user.blogs.create(@attr.merge(:title => "viel Text", 
+                                       :description => "noch viel mehr Text"))
+       @bp1 = Factory(:blogpost, :blog => @blog, :user => @user, :created_at => 1.day.ago)
+       @bp2 = Factory(:blogpost, :blog => @blog, :user => @user, :created_at => 1.hour.ago)
+    end
+    it "should have a blogposts attribute" do
+       @blog.should respond_to(:blogposts)
+    end      
+    it "should have the right blogposts in the right order" do
+       @blog.blogposts.should == [@bp2, @bp1]
+    end 
+    it "sollte zugeordnete blogposts zerstoeren" do
+        @blog.destroy
+        [@bp1, @bp2].each do |blogpost|
+           Blogpost.find_by_id(blogpost.id).should be_nil
+        end
+    end  
+  end
   describe "Ueberpruefungen (validations)" do
     it "sollte eine user id erfordern" do
        Blog.new(@attr).should_not be_valid
@@ -83,13 +103,5 @@ describe Blog do
     it "sollte eine ueberlange Beschreibung zurueckweisen" do
        @user.blogs.build(:description => "a" * 258).should_not be_valid
     end
-  end
-  describe "blogposts associations" do
-    before(:each) do
-       @blog = Blog.create(@attr)
-    end
-    it "should have a blogposts attribute" do
-       @blog_should respond_to(:blogposts)
-    end        
   end
 end
