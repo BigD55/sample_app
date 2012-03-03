@@ -8,6 +8,9 @@
             by 
             <%= link_to gravatar_for(@blog.user, :size => 20), @blog.user %>
             <%= link_to @blog.user.name, @blog.user %> 
+            <% if signed_in? %>
+               <%= link_to "new blogpost", new_blogpost_path %>
+            <% end %>
          </span>
           <% unless @blog.blogposts.empty? %>
                   <table class="blogposts" summary="Blog blogposts">
