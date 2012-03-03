@@ -20,7 +20,7 @@ describe BlogpostsController do
         end
         describe "failure" do
           before(:each) do
-            @attr = { :title => "", :content => "" } 
+            @attr = { :title => "", :content => "", :blog_id => @blog.id } 
             
           end 
           it "should not create a blogpost" do
@@ -28,14 +28,14 @@ describe BlogpostsController do
                 post :create, :blogpost => @attr
              end.should_not change(Blogpost, :count)
           end
-          it "should render the blog page" do
+          it "should render the new blogpost page" do
              post :create, :blogpost => @attr                                      
-             response.should redirect_to(blog_path)
+             response.should redirect_to(new_blogpost_path)
           end
         end 
         describe "success" do
           before(:each) do
-            @attr = { :title => "Rerum aperiam", :content => "Lorem ipsum" }
+            @attr = { :title => "Rerum aperiam", :content => "Lorem ipsum", :blog_id => @blog.id }
           end
           it "should create a blogpost" do
             lambda do
@@ -44,7 +44,7 @@ describe BlogpostsController do
           end
           it "should redirect to the Blog page" do
             post :create, :blogpost => @attr
-            response.should redirect_to(blog_path)
+            response.should redirect_to(blog_path(@attr[:blog_id]))
           end
           it "should have a flash message" do
             post :create, :blogpost => @attr
