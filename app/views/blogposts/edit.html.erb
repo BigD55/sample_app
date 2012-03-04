@@ -1,0 +1,27 @@
+<h1>Edit blogpost</h1>      
+    <% if signed_in? %>
+      <div class="blog"> 
+           <h1 class="blog"><%= @blogpost.blog.title %></h1>
+           <p><%= @blogpost.blog.description.html_safe %></p>
+      </div>
+     <%= form_for(@blogpost) do |f| %>
+        <%= render 'shared/error_messages', :object => f.object %>
+        <div class="field">
+          <%= f.label :title %><br />
+          <%= f.text_field :title %>
+        </div>
+        <div class="field">
+          <%= f.label :content %><br />
+          <%= f.text_area :content %>
+       </div>
+       <div class="actions">
+          <%= f.submit "Update" %>
+       </div>
+    <% end %>
+  <% else %>
+   <p>
+     This is my experimental Social-Multimedia-Site, you can create blogs,
+     share micromessages, and comment....  
+   </p>
+   <%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+<% end %>
