@@ -9,8 +9,9 @@ class BlogpostsController < ApplicationController
            redirect_to new_blogpost_path
         end
     end  
-    def new
+    def new      
         @blogpost = Blogpost.new
+        @blog =  Blog.find(params[:blog_id])    
         @title = "Create New Blogpost"
     end 
     def edit 

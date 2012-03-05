@@ -4,7 +4,9 @@
       
      <tr>
        <td class="main">
-           <%= render 'shared/newblogpost_form' %>
+           <h1 class="blog"><%= @blog.title %></h1>
+           <p><%= @blog.description.html_safe %></p>
+            <%= render 'shared/newblogpost_form' %>
        </td>
        <td class="sidebar round">
            <%= render 'shared/user_info' %>

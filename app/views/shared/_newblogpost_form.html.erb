@@ -1,7 +1,7 @@
 <%= form_for(@blogpost) do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
-     <%= f.collection_select(:blog_id, current_user.blogs.all, :id, :title) %>
-    <div class="field">
+     <%= f.hidden_field :blog_id, :value => @blog.id %>
+     <div class="field">
       <%= f.label :title %><br />
       <%= f.text_field :title %>
     </div>
@@ -11,6 +11,6 @@
     </div>
     
     <div class="actions">
-       <%= f.submit "Create Blogpost" %>
+       <%= f.submit "Create Blogpost"  %>
     </div>
 <% end %>
