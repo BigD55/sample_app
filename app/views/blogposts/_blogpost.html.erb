@@ -4,7 +4,12 @@
       <span class="content"><%= blogpost.content.html_safe %></span>
       <span class="timestamp">
          Posted <%= time_ago_in_words(blogpost.created_at) %> ago. 
-          <%= link_to "edit", edit_blogpost_path(blogpost.id) %> 
+         <% if current_user?(blogpost.user) %>
+            <%= link_to "edit", edit_blogpost_path(blogpost.id) %> 
+            <%= link_to "delete", blogpost, :method => :delete,
+                                        :confirm => "You sure?",
+                                        :title => blogpost.title %>
+         <% end %>
      </span>
    </td>
 </tr>
