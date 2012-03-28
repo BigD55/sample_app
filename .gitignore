@@ -2,3 +2,17 @@
 db/*.sqlite3
 log/*.log
 tmp/
+# Twitter bootstrap stuff
+public/stylesheets/bootstrap/js/*.*
+public/stylesheets/bootstrap/img/*.*
+public/stylesheets/bootstrap/less/*.*
+public/stylesheets/bootstrap/docs/*.html
+public/stylesheets/bootstrap/docs/build/
+public/stylesheets/bootstrap/docs/examples/
+public/stylesheets/bootstrap/docs/templates/
+public/stylesheets/bootstrap/docs/LICENSE
+public/stylesheets/bootstrap/docs/Makefile
+public/stylesheets/joshua*/
+public/stylesheets/xbootstrap/
+public/stylesheets/bootstrap/.git
+
