@@ -42,14 +42,8 @@ color: #069;
 /* Navigation */
 .navbar-inner  {
 background: url("/images/Zeichnung.svg") 
-
 repeat-x top left;
-
   
-/*    opacity: 0.5; *//* opacity [0-1] */
-/*    -moz-opacity: 0.5;  *//* opacity [0-1] */
-/*    -webkit-opacity: 0.5; *//* opacity [0-1] */
-   
 }
 /*
 nav {
