@@ -1,7 +1,17 @@
-<table class="blog">
-     <tr>
-       <td class="blog">       
-         <h1 class="blog"><%= @blog.title %></h1>
+ <div class="row">
+      <aside class="span3">
+
+       <% if signed_in? %>
+        <section>
+           <%= render 'shared/user_info' %>
+        </section>
+        <section>
+           <%= render 'shared/stats' %>
+        </section>
+      <% end %>
+      </aside>
+      <div class="span9">   
+         <h1><%= @blog.title %></h1>
          <p><%= @blog.description.html_safe %></p>
          <span class="timestamp">
             Created <%= time_ago_in_words(@blog.created_at) %> ago
@@ -18,12 +28,5 @@
                   </table>
                   <%= will_paginate @blogposts %>
           <% end %>
-      </td>
-      <% if signed_in? %>
-        <td class="sidebar round">
-           <%= render 'shared/user_info' %>
-           <%= render 'shared/stats' %>
-        </td>
-      <% end %>
-    </tr>
-</table>
+      </div>
+ </div>
