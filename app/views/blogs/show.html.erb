@@ -8,7 +8,12 @@
         <section>
            <%= render 'shared/stats' %>
         </section>
-      <% end %>
+      <% else %>
+         <section>
+          <h2>create your own blogs and connect with friends!</h2> 
+          <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+         </section>
+        <% end %>
       </aside>
       <div class="span9">   
          <h1><%= @blog.title %></h1>
@@ -19,7 +24,9 @@
             <%= link_to gravatar_for(@blog.user, :size => 20), @blog.user %>
             <%= link_to @blog.user.name, @blog.user %> 
             <% if signed_in? %>
+              <% if current_user?(@blog.user) %>
                <%= link_to "new blogpost", new_blogpost_path(:blog_id => @blog.id) %>
+              <% end %>
             <% end %>
          </span>
           <% unless @blog.blogposts.empty? %>
