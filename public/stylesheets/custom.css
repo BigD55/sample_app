@@ -19,10 +19,17 @@ textarea {
   margin-bottom: 10px;
 }
 body {
-background: #eff;
+background: #cff;
+}
+.body {
+background: #fff;
+padding-top: 20px;
+padding-right: 15px;
+padding-left: 15px;
 }
 section {
 background: #fff;
+margin-bottom: 30px;
 }
 .round {
 -moz-border-radius: 10px;
@@ -209,7 +216,7 @@ input, textarea, select, .uneditable-input {
   display: block;
 }
 .timestamp {
-  color: $grayLight;
+  color: #999;
 }
 .gravatar {
   float: left;
@@ -219,5 +226,14 @@ aside textarea {
     height: 50px;
     margin-bottom: 5px;
 }
-
-
+/* blog, blogs */
+.bloghead {
+ 
+background: url("/images/Zeichnung.svg")
+repeat-x top left;
+ 
+   
+}
+.blog {
+background: #fafafe;
+}

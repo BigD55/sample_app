@@ -15,9 +15,11 @@
          </section>
         <% end %>
       </aside>
-      <div class="span9">   
+      <div class="span9 blog round"> 
+        <div class="bloghead round">  
          <h1><%= @blog.title %></h1>
          <p><%= @blog.description.html_safe %></p>
+      </div>
          <span class="timestamp">
             Created <%= time_ago_in_words(@blog.created_at) %> ago
             by 

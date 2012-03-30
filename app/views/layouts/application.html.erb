@@ -13,12 +13,12 @@
   <body onload="prettyPrint()" > 
     <%= render 'layouts/header' %>
     <div class="container body round">
-      <section class="round">
+     <!-- <section class="round"> -->
         <% flash.each do |key, value| %>
           <div class="flash <%= key %> round"><%= value %></div>
         <% end %>
         <%= yield %>
-     </section>
+<!--     </section> -->
      <%= render 'layouts/footer' %>
      <%= debug(params) if Rails.env.development? %>
     </div>

@@ -3,7 +3,12 @@ class BlogpostsController < ApplicationController
                   :options => { :theme => 'advanced',
                                 :theme_advanced_resizing => true,
                                 :theme_advanced_resize_horizontal => false,
-                                :plugins => %w{ table fullscreen }
+                                :theme_advanced_toolbar_location => "top",
+                                :theme_advanced_toolbar_align => "left",
+                                :plugins => %w{ table fullscreen save media },
+                                :skin => "o2k7",
+                                :skin_variant => "silver",
+                                :theme_advanced_buttons4 => "save, |, forecolor, backcolor, fullscreen, media"
                               }
     before_filter :authenticate, :only => [:create, :update, :destroy]
     def create
