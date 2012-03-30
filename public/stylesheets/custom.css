@@ -220,7 +220,8 @@ input, textarea, select, .uneditable-input {
 }
 .gravatar {
   float: left;
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-left: 10px;
 }
 aside textarea {
     height: 50px;
@@ -228,12 +229,22 @@ aside textarea {
 }
 /* blog, blogs */
 .bloghead {
- 
+padding-top:15px;
+padding-left:10px; 
+padding-bottom:10px;
 background: url("/images/Zeichnung.svg")
-repeat-x top left;
- 
-   
+repeat-x top;
+border: solid 1px #ccf;
 }
+
 .blog {
 background: #fafafe;
+}
+.blogliste {
+float:left;
+}
+.blogliste table{
+margin-top:30px;
+margin-left:20px;
+
 }
