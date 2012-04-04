@@ -13,7 +13,7 @@ guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' }, :wait => 120 do
   watch('test/test_helper.rb')
 end
 
-guard 'rspec', :version => 2, :all_after_pass => false, :cli => '--drb' do
+guard 'rspec', :version => 2, :all_on_start => false, :all_after_pass => false, :cli => '--drb' do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
@@ -23,7 +23,8 @@ guard 'rspec', :version => 2, :all_after_pass => false, :cli => '--drb' do
   watch(%r{^app/controllers/(.+)_(controller)\.rb$})  { |m| [ "spec/#{m[2]}s/#{m[1]}_#{m[2]}_spec.rb"] }
   watch(%r{^app/models/(.+)_\.rb$})  { |m| [ "spec/models/#{m[1]}_spec.rb"] }
   watch(%r{^app/helpers/(.+)_\.rb$})  { |m| [ "spec/helpers/#{m[1]}_spec.rb"] }
-  watch(%r{^app/views/layouts/(.+)_\.rb$})  { |m| [ "spec/requests/layout_links_spec.rb"] }
+  watch(%r{^app/views/(.+)/(.+)_\.rb$})  { |m| [ "spec/requests","spec/views" ]}
+  
   
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
  
