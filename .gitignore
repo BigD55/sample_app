@@ -2,6 +2,7 @@
 db/*.sqlite3
 log/*.log
 tmp/
+webrat.log
 # Twitter bootstrap stuff
 public/stylesheets/bootstrap/js/*.*
 public/stylesheets/bootstrap/img/*.*
