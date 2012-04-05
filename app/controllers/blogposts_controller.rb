@@ -1,15 +1,5 @@
 class BlogpostsController < ApplicationController
-    uses_tiny_mce :only => [:new, :create, :edit, :update], 
-                  :options => { :theme => 'advanced',
-                                :theme_advanced_resizing => true,
-                                :theme_advanced_resize_horizontal => false,
-                                :theme_advanced_toolbar_location => "top",
-                                :theme_advanced_toolbar_align => "left",
-                                :plugins => %w{ table fullscreen save media },
-                                :skin => "o2k7",
-                                :skin_variant => "silver",
-                                :theme_advanced_buttons4 => "save, |, forecolor, backcolor, fullscreen, media"
-                              }
+    
     before_filter :authenticate, :only => [:create, :update, :destroy]
     def create
         @blogpost = current_user.blogposts.build(params[:blogpost])
