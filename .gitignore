@@ -2,6 +2,7 @@
 db/*.sqlite3
 log/*.log
 tmp/
+.sass-cache/
 # Twitter bootstrap stuff
 public/stylesheets/bootstrap/js/*.*
 public/stylesheets/bootstrap/img/*.*

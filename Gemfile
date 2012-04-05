@@ -1,12 +1,18 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
+gem 'bootstrap-sass', '2.0.2'
 gem 'sqlite3','1.3.4'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.5'
 gem 'paperclipdropbox'
 gem 'therubyracer'
+group :assets do
+  gem 'sass-rails', " ~> 3.1.0"
+  gem 'coffee-rails', " ~> 3.1.0"
+  gem 'uglifier'
+end
 gem 'jquery-rails'
 gem 'tinymce-rails'
 gem 'rails_autolink'

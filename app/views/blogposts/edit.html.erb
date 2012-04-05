@@ -12,7 +12,8 @@
         </div>
         <div class="field">
           <%= f.label :content %><br />
-          <%= f.text_area :content, class: "mceEditor" %>
+          <%= f.text_area :content %>
+          <%= javascript_include_tag "tinymce_init" %>
          </div>
        <div class="actions">
           <%= f.submit "Update" %>
