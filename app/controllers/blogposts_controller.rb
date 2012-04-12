@@ -38,4 +38,5 @@ class BlogpostsController < ApplicationController
     end
     def index 
     end
+ 
 end

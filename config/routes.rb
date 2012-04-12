@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
 
+  Mercury::Engine.routes
+
   resources :blogs
   resources :users do
     member do
@@ -19,6 +21,7 @@ SampleApp::Application.routes.draw do
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
   root :to => 'pages#home'
+  match "/rails" => redirect("http://weblog.rubyonrails.org/"), :as => :rails
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

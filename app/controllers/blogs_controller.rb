@@ -4,8 +4,11 @@ class BlogsController < ApplicationController
 
   def show 
     @blog = Blog.find(params[:id])
-    @blogposts = @blog.blogposts.paginate(:page => params[:page])
     @title = @blog.title
+    respond_to do |format|
+        format.html { @blogposts = @blog.blogposts.paginate(:page => params[:page]) }
+        format.atom { @blogposts = @blog.blogposts }
+    end
   end 
   def new
     @blog = Blog.new
@@ -44,4 +47,5 @@ class BlogsController < ApplicationController
      @title = "All Blogs"
      @blogs = Blog.paginate(:page => params[:page])
   end
+  
 end
