@@ -8,5 +8,5 @@
 //= require tinymce
 //= require_self
 //= require prettify 
-
+//= require urls
 

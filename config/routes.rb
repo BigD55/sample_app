@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
 
+  resources :urls, :only => [:show, :new, :create]
+
   Mercury::Engine.routes
 
   resources :blogs
